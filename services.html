@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Team Oyo - Services</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* --- Styles for all pages (common styles) --- */
+        :root {
+            --primary-color: #4A148C;
+            --secondary-color: #7B1FA2;
+            --light-gray: #f4f4f9;
+            --dark-gray: #333;
+            --white-color: #ffffff;
+            --accent-color: #ffc107;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white-color);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+           font-size: 2.5rem;
+           text-align: center;
+           margin-bottom: 2.5rem;
+           color: var(--primary-color);
+           position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        section {
+            padding: 5rem 0;
+            padding-top: 8rem; /* Offset for fixed header */
+        }
+        
+        .section-bg {
+            background: linear-gradient(180deg, var(--light-gray) 0%, #e0e0f0 100%);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- Header & Navigation --- */
+        .navbar {
+            background-color: var(--white-color);
+            color: var(--dark-gray);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .navbar ul li a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Services Section Specific Styles --- */
+        #services .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        #services .service-item {
+            background-color: var(--white-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 5px solid var(--primary-color);
+        }
+        
+        #services .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        #services .service-item i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        #services .service-item h3 {
+            color: var(--dark-gray);
+            font-size: 1.5rem;
+        }
+        
+        /* --- Footer --- (Same as home.html) */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white-color);
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 5px solid var(--primary-color);
+        }
+        
+        footer h3 {
+            color: var(--white-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .social-links {
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            color: var(--white-color);
+            font-size: 1.8rem;
+            margin: 0 0.8rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        footer p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="home.html" class="logo">GREAT TEAM OYO</a>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="services" class="section-bg">
+            <div class="container">
+                <h2>What We Offer</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">We provide comprehensive training and mentorship across two crucial pillars of modern wealth creation: **Network Marketing** for residual income, and **High-Value Freelancing** for immediate cash flow and skill acquisition.</p>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Network Marketing Mastery</h3>
+                        <p>Learn proven strategies to build a successful, sustainable, and profitable network that delivers true residual income and financial stability, fostering long-term generational wealth.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-code"></i>
+                        <h3>Freelance Skill Development</h3>
+                        <p>Master high-demand freelance skills in web development, digital marketing, and content creation to maximize your earning potential and gain complete autonomy over your work life.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Wealth Creation Mentorship</h3>
+                        <p>Get access to personalized coaching on investment, financial literacy, and proactive strategies to secure your future wealth and achieve your exceptional lifestyle goals.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-users-gear"></i>
+                        <h3>Leadership Training</h3>
+                        <p>We train you to lead teams, solve complex problems, and inspire others, transforming you from a follower into a proactive, independent business owner.</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="contact.html" class="btn">Ready to Start Earning?</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <h3>Follow Us & Get In Touch</h3>
+            <p>We're ready to change the story for good. Connect with us on social media.</p>
+            <div class="social-links">
+                <a href="https://www.fiverr.com/users/ceebex253/manage_gigs" target="_blank" aria-label="Fiverr"><i class="fas fa-globe"></i></a>
+                <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 Great Team Oyo. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
